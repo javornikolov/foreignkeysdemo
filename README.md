@@ -2,12 +2,16 @@ Demo app to reproduce matthuhiggins/foreigner#110
 
 ### Steps to reproduce the issue: 
 
-``` ruby
+```
 rake db:create
 rake db:migrate VERSION=20140427204421
 rake db:migrate VERSION=20140427204421 RAILS_ENV=test
 rake db:migrate
+
+# In This moment any of following fails:
 rake spec
+
+rake db:schema:load
 ```
 
 Error stack:
